@@ -1,6 +1,5 @@
 import cv2
 import imutils
-import numpy as np
 
 class VideoDetector:
     def __init__(self, detector, file_path, output_path):
@@ -23,7 +22,9 @@ class VideoDetector:
                 frame = imutils.resize(frame, width=min(800, frame.shape[1]))
                 frame, _ = self.detector.detect(frame)         
                 self.writer.write(frame)
-                cv2.waitKey(1)
+                cv2.imshow('output', frame)
+                if cv2.waitKey(1) == ord('q'):
+                    break
                 
             else:
                 break

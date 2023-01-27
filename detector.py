@@ -20,5 +20,4 @@ class Detector:
                     cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 0, 0), 2)
         cv2.putText(frame, f'Total Persons : {person-1}',
                     (40, 70), cv2.FONT_HERSHEY_DUPLEX, 0.8, (255, 0, 0), 2)
-        cv2.imshow('output', frame)
         return frame, person-1
