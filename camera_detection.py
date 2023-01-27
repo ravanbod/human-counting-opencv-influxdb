@@ -5,7 +5,7 @@ from influxdb_client.client.write_api import ASYNCHRONOUS
 
 
 class CameraDetector:
-    def __init__(self, detector, influxdb_url, influxdb_token, influxdb_org, influxdb_bucket_name):
+    def __init__(self, detector, influxdb_url=None, influxdb_token=None, influxdb_org=None, influxdb_bucket_name=None):
         self.detector = detector
         if influxdb_url is not None:
             self.influxdb_url = influxdb_url
